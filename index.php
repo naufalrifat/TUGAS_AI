@@ -2,9 +2,9 @@
   <html>
   <style>
     body{
-        color: red;
+        color: ;
   background-color: red; /* For browsers that do not support gradients */
-  background-image: linear-gradient(to bottom right, black, white); /* Standard syntax (must be last) */
+  background-image: linear-gradient(to bottom right, white 5%, black 80%, white); /* Standard syntax (must be last) */
     font-family: "Century Gothic";
     }
     .button {
@@ -18,6 +18,17 @@
   font-size: 12px;
   margin: 4px 2px;
   cursor: pointer;
+}
+table, th, td {
+  border: 1px solid black;
+  background-color: orange;
+  border-collapse: collapse;
+  text-align: center;
+  color: white;
+  box-shadow: 5px 10px #ff8c00;
+}
+th, td {
+  padding: 5px;
 }
 .button1 {border-radius: 12px;}
   </style>
@@ -57,7 +68,7 @@
               while($row=mysqli_fetch_assoc($res))
               {
                    ?>
-                   <br><?=$row['id']?>
+                   <?=$row['judul_lagu']?>
                    <?=$row['judul_lagu']?>
                    <?=$row['penyanyi'] ?>
                    <?php
@@ -81,13 +92,22 @@
                   }
                   if(mysqli_num_rows($res)>0)
                   {
+                    echo "<table style='width:600px'>
+                    <tr>
+                        <th style='width:100px'>No</th>
+                        <th style='width:300px'>Judul Lagu</th>
+                        <th style='width:300px'>Penyanyi</th>
+                    </tr>";
                     while($row=mysqli_fetch_assoc($res))
                     {
                          $count++;
                          ?>
-                         <br><?=$row['id']?>
-                         <?=$row['judul_lagu']?>
-                         <?=$row['penyanyi'] ?>
+                            <tr>
+                                <td><?=$row['id']?></td>
+                                <td><?=$row['judul_lagu']?></td>
+                                <td><?=$row['penyanyi'] ?></td>
+                            </tr>
+                            </table>
                          <?php
                     }
                   }
