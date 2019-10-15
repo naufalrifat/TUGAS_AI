@@ -5,13 +5,27 @@
         color: red;
   background-color: red; /* For browsers that do not support gradients */
   background-image: linear-gradient(to bottom right, black, white); /* Standard syntax (must be last) */
+    font-family: "Century Gothic";
     }
+    .button {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button1 {border-radius: 12px;}
   </style>
   <body>
     <center>
      <form action="index.php" method="post">
          <input type="text" name="search_query" />
-         <input type="submit" name="search" />
+         <button type="submit" class="button button1" name="search" >Search</button>
      </form>
    </center>
   </body>
